@@ -2,7 +2,7 @@ const data = require("../data");
 
 module.exports.getAllUsers = async (req, res, next) => {
   const { number, page } = req.query;
-  res.json(data.slice(0, number));
+  res.json(data.slice(0, number, page));
 };
 
 module.exports.getRandomUser = (req, res, next) => {
