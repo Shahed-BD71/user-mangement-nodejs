@@ -2,7 +2,8 @@ const data = require("../data");
 
 module.exports.getAllUsers = async (req, res, next) => {
   const { number, page } = req.query;
-  res.json(data.slice(0, number, page));
+  const allUser = data.slice(0, number, page);
+  res.render("home.ejs", { allUser: allUser });
 };
 
 module.exports.getRandomUser = (req, res, next) => {
@@ -13,9 +14,8 @@ module.exports.addUser = async (req, res, next) => {
   const { name, gender, photoUrl, contact, address } = req.body;
   if (name && gender && photoUrl && contact && address) {
     await data.push(req.body);
-  }
-  else{
-    console.log("Pleas Provide all required data")
+  } else {
+    console.log("Pleas Provide all required data");
   }
   res.json(data);
 };
@@ -24,7 +24,8 @@ module.exports.detailsUser = async (req, res, next) => {
   const { id } = req.params;
   console.log(id);
   const foundUser = await data.find((user) => user.id === Number(id));
-  res.send(foundUser);
+  console.log(foundUser);
+  res.render("home.ejs", { anUser: foundUser });
 };
 
 module.exports.updateUser = async (req, res, next) => {
