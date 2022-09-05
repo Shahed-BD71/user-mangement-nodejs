@@ -19,7 +19,7 @@ app.use(express.static("public"))
 app.use("/api/v1/users", userRoutes)
 app.get("/", (req, res) => {
   // const userData = data.sort(() => 0.5 - Math.random()).slice(0, 10)
-  res.render("test.ejs",)
+  res.render("test.ejs", {users: data})
 });
 
 app.all("*", (req, res, next) => {

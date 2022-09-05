@@ -3,7 +3,8 @@ const data = require("../data");
 module.exports.getAllUsers = async (req, res, next) => {
   const { number, page } = req.query;
   const allUser = data.slice(0, number, page);
-  res.render("home.ejs", { allUser: allUser });
+  // res.render("home.ejs", { allUser: allUser });
+  res.render("test.ejs", { users: allUser });
 };
 
 module.exports.getRandomUser = (req, res, next) => {
@@ -25,7 +26,8 @@ module.exports.detailsUser = async (req, res, next) => {
   console.log(id);
   const foundUser = await data.find((user) => user.id === Number(id));
   console.log(foundUser);
-  res.render("home.ejs", { anUser: foundUser });
+  // res.render("home.ejs", { anUser: foundUser });
+  // res.render("test.ejs", {users: foundUser})
 };
 
 module.exports.updateUser = async (req, res, next) => {
