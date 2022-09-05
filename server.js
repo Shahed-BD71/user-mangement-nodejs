@@ -26,5 +26,5 @@ app.all("*", (req, res, next) => {
   res.send("No Route Found");
 });
 
-const ports = process.env.PORT || 5000;
+const ports = (process.env.PORT) || 5000;
 app.listen(ports, () => console.log(`Hello from the ${ports}`));
