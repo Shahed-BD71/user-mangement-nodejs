@@ -11,7 +11,7 @@
   },
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "server.js"
+    "start": "node server.js"
   },
   "name": "express-js-mvc",
   "version": "1.0.0",
