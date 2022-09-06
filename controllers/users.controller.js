@@ -7,7 +7,8 @@ module.exports.getAllUsers = async (req, res, next) => {
 };
 
 module.exports.getRandomUser = (req, res, next) => {
-  res.json(data.sort(() => 0.5 - Math.random()).slice(0, 1));
+  const randomUser = (data.sort(() => 0.5 - Math.random()).slice(0, 1));
+  res.render("home.ejs", { allUser: randomUser });
 };
 
 module.exports.addUser = async (req, res, next) => {
