@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h3>This is user: <%= id %></h3>
-</body>
+  </head>
+  <body>
+    <ul>
+      <% for (var i = 0; i < users.length; i++) { %>
+      <li>
+        <div>
+          <span style="font-weight: 700; font-size: 22px">
+            <%= users[i].name %></span
+          >
+          <span> - (<%= users[i].gender %>) </span>
+        </div>
+      </li>
+      <% } %>
+    </ul>
+  </body>
 </html>

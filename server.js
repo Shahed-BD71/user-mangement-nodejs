@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require('body-parser')
 let ejs = require('ejs');
+const data = require('./data.json')
 // const dbConnect = require('./utils/dbConnect');
 const userRoutes = require("./routes/v1/users.route.js");
 
@@ -23,7 +24,7 @@ app.get("/", (req, res) => {
   // serve dynamic fie by ejs
 
   res.render("home.ejs", {
-    id: 2
+     users: data
   })
 });
 
