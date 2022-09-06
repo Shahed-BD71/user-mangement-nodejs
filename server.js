@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
   // serve dynamic fie by ejs
 
   res.render("home.ejs", {
-     users: data
+     allUser: data
   })
 });
 
