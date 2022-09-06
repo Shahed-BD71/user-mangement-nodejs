@@ -56,6 +56,6 @@ module.exports.updateUserData = async (req, res, next) => {
 module.exports.deleteUser = async (req, res, next) => {
   const { id } = req.params;
   const filter = { _id: id };
-  const newUser = await data.filter((user) => user.id !== Number(id));
-  res.send(newUser);
+  const removeUser = await data.filter((user) => user.id !== Number(id));
+  res.render("home.ejs", { allUser: removeUser });
 };

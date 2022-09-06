@@ -12,14 +12,14 @@ app.use(express.json());
 app.use(bodyParser.json())
 app.use(express.static("views"))
 app.set("view engine", ejs)
-// app.use(express.static("public"))
+app.use(express.static("public"))
 
 
 // Routes
 app.use("/api/v1/users", userRoutes)
 app.get("/", (req, res) => {
-  // const userData = data.sort(() => 0.5 - Math.random()).slice(0, 10)
-  res.render("test.ejs", {users: data})
+  const userData = data.sort(() => 0.5 - Math.random()).slice(0, 10)
+  res.render("home.ejs", {allUser: userData})
 });
 
 app.all("*", (req, res, next) => {
